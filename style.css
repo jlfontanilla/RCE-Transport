@@ -34,9 +34,14 @@ h2 {
   align-items: center;
   padding: 15px 30px;
 }
+.navbar h1{
+  font-size: 18px;
+  margin-left: -50%;
+}
 
 .logo img {
-  height: 60px;
+  height: 80px;
+  
 }
 
 .nav-links {
@@ -45,6 +50,7 @@ h2 {
   gap: 20px;
   padding: 0;
   margin: 0;
+  margin-right: 10%;
 }
 
 .nav-links li a {
@@ -92,25 +98,16 @@ h2 {
   margin-bottom: 10px;
 }
 
+.hero-content h3{
+  display: none;
+}
+
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
-.btn {
-  background-color: #ff3131;
-  color: white;
-  padding: 10px 25px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-}
 
-.btn:hover {
-  background-color: #ff5050;
-}
 
 /* --- ABOUT --- */
 .container p{
@@ -270,8 +267,29 @@ h2 {
   .menu-toggle {
     display: block;
     margin-left:80%;
+    margin-top: -10%;
   }
   
+  .hero-content h3{
+    display: block;
+    font-size: 50px;
+  }
+  .hero-content h1{
+    display: none;
+  }
+  
+  .logo img {
+    width: 150px;
+    height: 100px;
+  }
+
+
+  .navbar h1{
+    font-size: 12px;
+    margin-left: -80%;
+    margin-top: -10%
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -284,6 +302,10 @@ h2 {
     gap: 10px;
     padding: 20px 0;
   }
+
+  .navbar-wrapper{
+    height: 130px;
+  }
   
   .nav-links li a {
     display: block;
@@ -293,5 +315,55 @@ h2 {
 
   .nav-links.active {
     display: flex;
+  }
+  
+}
+
+/* --- FLOATING BOOK NOW BUTTON --- */
+.floating-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 250px;
+  background-color: #ff3131;
+  color: white;
+  padding: 25px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1500;
+  transition: background 0.3s, transform 0.3s;
+  animation: pulse 2s infinite;
+}
+
+.floating-btn:hover {
+  background-color: #ff5050;
+  transform: scale(1.1);
+}
+
+
+
+/* --- PULSE ANIMATION --- */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 49, 49, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(255, 49, 49, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 49, 49, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-btn {
+    padding: 16px 32px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 0.9rem;
   }
 }

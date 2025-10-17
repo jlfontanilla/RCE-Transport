@@ -1,5 +1,6 @@
 html, body {
   overflow-x: hidden;
+  
 }
 
 /* --- GENERAL STYLING --- */
@@ -24,10 +25,13 @@ h2 {
 
 /* --- NAVBAR --- */
 .navbar-wrapper {
+  display: flex;
+  align-items: flex-end; /* ensures navbar stays at bottom */
+  height: 130px; /* or whatever your navbar height is */
+  background-color: #ffffffa4;
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #ffffffa4;
   z-index: 1000;
   transition: top 0.4s;
 }
@@ -35,8 +39,11 @@ h2 {
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
+  align-items: flex-end; /* keep items at bottom */
+  padding: 0 30px; /* optional: reduce top/bottom padding */
+  height: 100%; /* make navbar fill the wrapper */
+  margin-bottom: 1%;
+  
 }
 
 .logo{
@@ -47,21 +54,21 @@ h2 {
   font-size: 18px;
   margin-left: 0%;
   color: #111;
+  white-space: nowrap;
 }
 
 .logo img {
-  height: 80px;
-  
+  height: 100px;
+  margin-top: 2%
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  align-items: right; /* ensures the links align perfectly with the logo */
+  gap: 50px;
   padding: 0;
   margin: 0;
-  margin-right: 35%;
-  
 }
 
 .nav-links li a {
@@ -156,25 +163,28 @@ h2 {
   max-width: 80%;
   max-height: auto;
 }
-.container p1{
+.container p{
   font-style: italic;
   font-size: Large;
   font-family: Arial, sans-serif;
   text-align: center;
-  
+  text-align: justify;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-.container p2{
+.container p1{
   font-style: italic;
   font-size: medium;
   font-family: Arial, sans-serif;
-  text-align: right;
+  text-align: justify;
+  
   
 }
 .container2 img{
-  margin-top: 10%;
-  max-width: 93%;
-  max-height: auto;
+  
+  max-width: 30%;
+  max-height: 20%;
 }
 
 .container2 {
@@ -187,6 +197,7 @@ h2 {
   background-color: #dddddd; /* background spans entire width */
   padding: 60px 0; /* space above/below */
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
 }
 
 .container2 h2 {
@@ -196,7 +207,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-.container2 p1 {
+.container2 p {
   display: block;
   max-width: 900px; /* limit text width for readability */
   margin: 3px auto;
@@ -207,21 +218,69 @@ h2 {
   
 }
 
+/* --- CIRCLE LIST STYLING --- */
+.circle-list-container {
+  max-height: 400px; /* adjust the height as needed */
+  overflow-y: auto; /* allows vertical scrolling */
+  padding: 0 10px;
+  margin: 20px 0;
+  border-left: 3px solid #570c0c; /* optional visual accent */
+  color: #111;
+  text-align: left;
+  margin-left: 27%;
+ 
+ 
+}
+
 .circle-list {
-  list-style-type: circle;
-  max-width: 900px;
-  margin: 20px auto;
-  padding-left: 40px;
+  list-style: none; /* remove default bullets */
+  padding-left: 0;
+  margin: 0;
 }
 
 .circle-list li {
-  font-size: 25px;
-  text-align: left;
+  position: relative;
+  padding-left: 25px; /* space for the circle */
   margin-bottom: 10px;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+/* create the small circle */
+.circle-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px; /* center circle vertically */
+  width: 10px;
+  height: 10px;
+  background-color: #580a0a; /* circle color */
+  border-radius: 50%;
+}
+
+/* optional: scrollbar styling */
+.circle-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.circle-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.circle-list-container::-webkit-scrollbar-thumb {
+  background: #ff3131;
+  border-radius: 4px;
 }
 
 
+
 /* --- SERVICES --- */
+
+#rates .container p{
+  text-align: center;
+}
+
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -247,8 +306,18 @@ h2 {
   box-shadow: 0 4px 15px rgba(255, 49, 49, 0.4);
 }
 
+
+/* --- Contact --- */
+#contact .container h2{
+  text-align: left;
+  margin-left: 10%
+}
+
 /* --- FEEDBACK FORM --- */
+
+
 .feedback-form {
+  
   display: flex;
   flex-direction: column;
   max-width: 500px;
@@ -262,6 +331,7 @@ h2 {
   border: none;
   border-radius: 5px;
   font-size: 1rem;
+  
 }
 
 .feedback-form button {
@@ -322,6 +392,10 @@ h2 {
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
   }
 
   .hero-content h1 {
@@ -391,45 +465,7 @@ h2 {
 }
 
 /* --- ZONE INFO PANELS --- */
-.zone-info {
-  max-height: 0;
-  overflow: hidden;
-  background-color: #555555;
-  margin-top: 25px;
-  border-radius: 15px;
-  padding: 0 20px;
-  text-align: left;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  transition: max-height 0.6s ease, padding 0.4s ease;
-}
 
-.zone-info.active {
-  max-height: 600px;
-  padding: 20px;
-}
-
-.zone-info h3 {
-  color: #ff3131;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.zone-info ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.zone-info li {
-  padding: 8px 0;
-  border-bottom: 1px solid #444;
-  font-size: 1.1rem;
-}
-
-.zone-info li:last-child {
-  border-bottom: none;
-}
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
@@ -447,12 +483,7 @@ h2 {
     font-size: 0.85rem;
   }
 
-  .zone-info {
-    font-size: 0.95rem;
-  }
 }
-
-
 
 
 
@@ -497,8 +528,8 @@ h2 {
 
   .menu-toggle {
     display: block;
-    margin-left:80%;
-    margin-top: -10%;
+    margin-left:290%;
+    margin-top: -22%;
     color: #111;
   }
   
@@ -510,25 +541,6 @@ h2 {
     display: none;
   }
   
-  .logo{
-    display: flex;
-  }
-  
-  .logo img {
-    width: 150px;
-    height: 100px;
-    text-align: center;
-  }
-
-
-  .logo h1{
-    position:absolute;
-    font-size: 12px;
-    left: 7%;
-    bottom: 10%;
-    color: #111;
-  
-  }
 
   .nav-links {
     display: none;
@@ -543,9 +555,7 @@ h2 {
     padding: 20px 0;
   }
 
-  .navbar-wrapper{
-    height: 130px;
-  }
+ 
   
   .nav-links li a {
     display: block;
@@ -555,6 +565,14 @@ h2 {
 
   .nav-links.active {
     display: flex;
+  }
+
+  .container p{
+    font-style: italic;
+    font-size: Large;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-align: justify;
   }
 
 }
@@ -600,10 +618,90 @@ h2 {
     font-size: 1.8rem;
   }
 
-  .container2 p1,
+  .container2 img{
+  
+    max-width: 80%;
+    max-height: 20%;
+  }
+
+  .container2 p,
   .circle-list li {
     font-size: 22px; /* consistent readable size */
     
     margin: 5%;
+  }
+  .circle-list-container {
+    max-height: 400px; /* adjust the height as needed */
+    overflow-y: auto; /* allows vertical scrolling */
+    padding: 0 10px;
+    margin: 20px 0;
+    border-left: 3px solid #570c0c; /* optional visual accent */
+    color: #111;
+    text-align: left;
+    
+  }
+
+}
+
+/* --- MOBILE NAVBAR FIX --- */
+@media (max-width: 768px) {
+
+  .navbar-wrapper {
+    height: auto; /* let content adjust naturally */
+    justify-content: center; /* center contents vertically */
+    align-items: center;
+    padding: 10px 0;
+    transition: 0.4s;
+  }
+
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  .logo {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .logo img {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .logo h1 {
+    position: static; /* remove absolute positioning */
+    font-size: 14px;
+    color: #111;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin: 10px auto 0;
+    color: #111;
+    font-size: 1.8rem;
+    margin-top: -7%;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(100, 100, 100, 0.95);
+    text-align: center;
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 }

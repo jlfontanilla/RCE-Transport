@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
   window.addEventListener("scroll", () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
-      navbarWrapper.style.top = "-100px"; // hide
+      navbarWrapper.style.top = "-160px"; // hide
     } else {
       navbarWrapper.style.top = "0"; // show
     }
@@ -50,7 +50,7 @@ navLinkItems.forEach(link => {
 });
 
   
-
+/*
 // --- ZONE BUTTON TOGGLE (smooth expand/collapse + active highlight) ---
 const zoneButtons = document.querySelectorAll(".zone-btn");
 const zoneInfos = document.querySelectorAll(".zone-info");
@@ -82,4 +82,4 @@ zoneButtons.forEach(button => {
     }, 30);
   });
 });
-
+*/

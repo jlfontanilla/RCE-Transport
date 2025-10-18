@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
         }
       });
     },
-    { threshold: 0.2 }
+    { threshold: 0.1 }
   );
   fadeElements.forEach((el) => appearOnScroll.observe(el));
   

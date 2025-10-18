@@ -1,7 +1,4 @@
-html, body {
-  overflow-x: hidden;
-  
-}
+
 
 /* --- GENERAL STYLING --- */
 body {
@@ -10,6 +7,7 @@ body {
   color: white;
   scroll-behavior: smooth;
   background-color: rgb(32, 32, 32);
+  overflow-x: hidden;
 }
 
 section {
@@ -184,20 +182,16 @@ h2 {
 .container2 img{
   
   max-width: 30%;
-  max-height: 20%;
+  max-height: auto;
 }
 
 .container2 {
-  width: 100vw; /* full screen width */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-color: #dddddd; /* background spans entire width */
-  padding: 60px 0; /* space above/below */
+  text-align: center;
+  width: 100%;
+  background-color: #dddddd;
+  padding: 60px 20px;
+  box-sizing: border-box;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
- 
 }
 
 .container2 h2 {
@@ -216,6 +210,14 @@ h2 {
   line-height: 1.6;
   color: rgb(46, 44, 44);
   
+}
+
+.container p,
+.container2 p {
+  text-align: justify;
+  text-justify: inter-word; /* use more natural spacing */
+  word-spacing: 0.05em; /* tighten word gaps slightly */
+  hyphens: auto; /* allows line breaks inside long words */
 }
 
 /* --- CIRCLE LIST STYLING --- */
@@ -380,7 +382,7 @@ h2 {
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.8s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 .fade-in.visible {
@@ -573,6 +575,18 @@ h2 {
     font-family: Arial, sans-serif;
     text-align: center;
     text-align: justify;
+    
+    
+  }
+
+ 
+
+  .container2 p {
+    text-align: justify;
+    text-justify: inter-word;
+    word-spacing: 0em;
+    hyphens: auto;
+    font-size: 16px;
   }
 
 }
@@ -611,6 +625,9 @@ h2 {
 @media (max-width: 768px) {
   .container2 {
     padding: 50px 15px;
+    width: 100vw;
+    margin-left: -4.5vw;
+    margin-right: -50vw;
   }
 
 
@@ -624,11 +641,12 @@ h2 {
     max-height: 20%;
   }
 
-  .container2 p,
+ 
   .circle-list li {
-    font-size: 22px; /* consistent readable size */
-    
+    font-size: 17px; /* consistent readable size */
     margin: 5%;
+
+  
   }
   .circle-list-container {
     max-height: 400px; /* adjust the height as needed */
@@ -705,4 +723,3 @@ h2 {
     display: flex;
   }
 }
-

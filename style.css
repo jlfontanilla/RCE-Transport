@@ -98,6 +98,9 @@ h2 {
   animation: pulse 2s infinite;
 
 }
+.floating-btn{
+  display: none;
+}
 
 .btnBook:hover {
   background-color: #ff5050;
@@ -819,3 +822,4 @@ h2 {
 .gallery-item:hover img {
   transform: scale(1.05);
 }
+

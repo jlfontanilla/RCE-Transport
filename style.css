@@ -98,6 +98,7 @@ h2 {
   animation: pulse 2s infinite;
 
 }
+
 .floating-btn{
   display: none;
 }
@@ -754,7 +755,7 @@ h2 {
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   padding: 30px;
-  width: 300px;
+  width: 100vh;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -822,4 +823,3 @@ h2 {
 .gallery-item:hover img {
   transform: scale(1.05);
 }
-
